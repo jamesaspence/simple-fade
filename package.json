@@ -1,0 +1,23 @@
+{
+  "name": "simple-fade",
+  "version": "1.0.0",
+  "description": "A library with jquery-like fading ability, written in native Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesaspence/simple-fade.git"
+  },
+  "keywords": [
+    "fade",
+    "javascript"
+  ],
+  "author": "James Spence <Jamesaspence20@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesaspence/simple-fade/issues"
+  },
+  "homepage": "https://github.com/jamesaspence/simple-fade#readme"
+}
