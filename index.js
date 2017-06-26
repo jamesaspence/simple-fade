@@ -12,7 +12,7 @@ function getDisplayStyle(elementType) {
     }
 }
 
-function fade(type, ms, el) {
+function fade(type, ms, el, cb) {
     var isIn = type === 'in',
         opacity = isIn ? 0 : 1,
         interval = 50,
@@ -29,7 +29,10 @@ function fade(type, ms, el) {
         el.style.opacity = opacity;
 
         if(opacity <= 0) el.style.display = 'none';
-        if(opacity <= 0 || opacity >= 1) window.clearInterval(fading);
+        if(opacity <= 0 || opacity >= 1) {
+            window.clearInterval(fading);
+            if(cb) cb();
+        }
     }
 
     var fading = window.setInterval(func, interval);
@@ -45,11 +48,11 @@ function hide(el) {
 }
 
 module.exports = {
-    fadeOut: function (ms, el) {
-        fade('out', ms, el);
+    fadeOut: function (ms, el, cb) {
+        fade('out', ms, el, cb);
     },
-    fadeIn: function (ms, el) {
-        fade('in', ms, el);
+    fadeIn: function (ms, el, cb) {
+        fade('in', ms, el, cb);
     },
     fade: fade,
     hide: hide,
